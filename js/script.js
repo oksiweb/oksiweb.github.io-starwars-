@@ -48,9 +48,7 @@
                     })
                 );
             })
-            .then(function(films){
-                createFilmDescription(films);
-            })
+            .then(createFilmDescription)
             .then(function(){
                 removeLoader();
             })
