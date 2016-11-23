@@ -1,0 +1,125 @@
+body{
+    position:relative;
+}
+main{
+    display: block;
+    max-width: 780px;
+    margin: 20px auto;
+    padding: 20px 40px;
+    background-color: #fff;
+    border:3px solid black;
+    border-radius: 10px;
+}
+
+h1{
+    text-align:center;
+}
+.container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+ul{
+    margin: 0;
+}
+
+ul li{
+    font-family: Arial;
+    color: black;
+    line-height: 30px;
+    font-size: 16px;
+    list-style-type: none;
+    text-align: left;
+}
+
+button{
+    display: inline-block;
+    padding: 6px 12px;
+    margin:3px 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: 5px;
+    background: white;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    outline: none;
+}
+button.prev{
+    border-radius: 20px 0 0 20px;
+    border-left: 2px solid black;
+    border-right: none;
+}
+button.next{
+    border-radius: 0 20px 20px 0;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+}
+
+button[disabled]{
+    cursor: not-allowed;
+    box-shadow: none;
+    color:#969e96;
+    border-top: 2px solid #969e96;
+    border-bottom: 2px solid #969e96;
+    opacity: .5;
+}
+button.prev[disabled]{
+     border-left: 2px solid #969e96;
+}
+button.next[disabled]{
+    border-right: 2px solid #969e96;
+}
+.group-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.preloader{
+    display:none;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left:0;
+    background: url('../img/preloader.svg') 50% 35% no-repeat;
+    background-size:50px;
+}
+.preloader-active {
+    display:block;
+}
+
+@media (max-width: 720px){
+    main{
+        margin: 20px;
+        border:none;
+    }
+	.container{
+		flex-direction: column;
+	}
+	.col{
+	    text-align:center;
+	}
+}
+
+.hero:after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('../img/hero.png');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    opacity: 0;
+    cursor:pointer;
+}
+
+.hero:after {
+    opacity: 1;
+}
