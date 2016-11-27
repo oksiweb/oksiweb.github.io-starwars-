@@ -10,7 +10,14 @@
 
     function addLoader() {
         preloader.classList.add('preloader-active');
-        container.setAttribute('style', 'opacity: 0');
+        container.classList.add('start');
+        container.classList.remove('end');
+    }
+
+    function removeLoader() {
+        container.classList.add('end');
+        container.classList.remove('start');
+        preloader.classList.remove('preloader-active');
     }
 
     function removeContent(){
@@ -24,11 +31,6 @@
         } else {
             return Promise.reject(new Error(response.statusText));
         }
-    }
-
-    function removeLoader() {
-        container.setAttribute('style', 'opacity: 1; transition: all 1s ease-out');
-        preloader.classList.remove('preloader-active');
     }
 
     function loadHero(id) {

@@ -19,6 +19,14 @@ h1{
 	flex-direction: row;
 	justify-content: space-around;
 }
+.start{
+    opacity: 0;
+}
+
+.end{
+    opacity: 1;
+    transition: all 1s ease-out;
+}
 
 ul{
     margin: 0;
